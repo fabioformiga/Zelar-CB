@@ -7,6 +7,10 @@ MKR:
   https://www.arduino.cc/en/Reference/MKRWANJoinOTAA
 The things network
   https://www.thethingsnetwork.org/
+  
+  limitações de mensagens diarias
+  https://www.thethingsnetwork.org/forum/t/limitations-data-rate-packet-size-30-seconds-uplink-and-10-messages-downlink-per-day-fair-access-policy-guidelines/1300
+ 
 Visual Studio Code
   https://code.visualstudio.com/
   PLATFORMIO:
