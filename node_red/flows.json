@@ -1,0 +1,154 @@
+[
+    {
+        "id": "d92b98e2.2b5de8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "c5eb0678.126fe",
+        "type": "inject",
+        "z": "d92b98e2.2b5de8",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "3",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "4",
+        "x": 190,
+        "y": 180,
+        "wires": [
+            [
+                "57adeb1c.76027c"
+            ]
+        ]
+    },
+    {
+        "id": "5f2b3100.14929",
+        "type": "debug",
+        "z": "d92b98e2.2b5de8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 800,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "57adeb1c.76027c",
+        "type": "openweathermap",
+        "z": "d92b98e2.2b5de8",
+        "name": "Node_Red",
+        "wtype": "current",
+        "lon": "",
+        "lat": "",
+        "city": "london",
+        "country": "UK",
+        "language": "en",
+        "x": 390,
+        "y": 180,
+        "wires": [
+            [
+                "78c38543.d1e444",
+                "b17ea1b7.72d678",
+                "1d8fe8d0.d6fb47"
+            ]
+        ]
+    },
+    {
+        "id": "78c38543.d1e444",
+        "type": "function",
+        "z": "d92b98e2.2b5de8",
+        "name": "Temperature",
+        "func": "var T;\nT = msg.payload.tempc;\nmsg.payload = \"current temperature = \" +T+ \" Degrees C\"; \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 610,
+        "y": 180,
+        "wires": [
+            [
+                "5f2b3100.14929"
+            ]
+        ]
+    },
+    {
+        "id": "b17ea1b7.72d678",
+        "type": "debug",
+        "z": "d92b98e2.2b5de8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 810,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "1d8fe8d0.d6fb47",
+        "type": "function",
+        "z": "d92b98e2.2b5de8",
+        "name": "Temperature",
+        "func": "var T;\nT = msg.payload.tempc;\nmsg.payload = T; \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 610,
+        "y": 100,
+        "wires": [
+            [
+                "ed4da3ab.78fe8",
+                "99f4cab7.b2fce8"
+            ]
+        ]
+    },
+    {
+        "id": "99f4cab7.b2fce8",
+        "type": "debug",
+        "z": "d92b98e2.2b5de8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 790,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "ed4da3ab.78fe8",
+        "type": "ui_gauge",
+        "z": "d92b98e2.2b5de8",
+        "name": "",
+        "group": "f0883c2d.337aa",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 810,
+        "y": 80,
+        "wires": []
+    }
+]
