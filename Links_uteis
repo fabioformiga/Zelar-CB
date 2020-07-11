@@ -11,10 +11,15 @@ The things network
   limitações de mensagens diarias
   https://www.thethingsnetwork.org/forum/t/limitations-data-rate-packet-size-30-seconds-uplink-and-10-messages-downlink-per-day-fair-access-policy-guidelines/1300
  
+ LoRa Shield
+ 	https://wiki.dragino.com/index.php?title=Getting_GPS_to_work_on_Raspberry_Pi_3_Model_B
+ 	
+
+
 Visual Studio Code
   https://code.visualstudio.com/
   PLATFORMIO:
     https://platformio.org/
     https://docs.platformio.org/en/latest/tutorials/index.html
-	nodered
+
     
