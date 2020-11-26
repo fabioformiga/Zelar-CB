@@ -1,0 +1,1 @@
+[{"id":"e38b4ead.c08cb","type":"function","z":"81f0d929.9a6a68","name":"","func":"var newMsg = { payload: msg.payload.payload};\nmsg.topic= \"INSERT INTO `tabela1`(`hora`, `data`, `texto`) VALUES (NOW(), NOW(), '\" + String(newMsg.payload)+ \"');\";\nreturn msg;\n","outputs":1,"noerr":0,"initialize":"","finalize":"","x":520,"y":360,"wires":[["38b8449c.be97fc"]]}]
