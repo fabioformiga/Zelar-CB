@@ -23,7 +23,7 @@ delay(2000);
   Serial.print("Your device EUI is: ");
   Serial.println(modem.deviceEUI());
   connected = modem.joinABP(devAddr, nwkSKey, appSKey);
-   modem.minPollInterval(120);//define min poll interval as 2 minutes
+  modem.minPollInterval(120);//define min poll interval as 2 minutes
 
 
 }
@@ -38,7 +38,10 @@ void loop() {
         
   if (connected) {
     Serial.println("successful connection ");
-  }else Serial.println("failed connection");
+  }
+  else{
+    Serial.println("Not connected");
+  } 
   //start sending message 
   modem.setPort(port);
   modem.beginPacket();
