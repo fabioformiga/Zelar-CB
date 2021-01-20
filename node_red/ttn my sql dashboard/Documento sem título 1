@@ -3,3 +3,8 @@ var dev_id = {payload: msg.dev_id};
 var app_id = {payload: msg.app_id};
 msg.topic= "INSERT INTO `tabela1` ( `dev_id` , `app_id` ,`hora`, `data`, `texto`) VALUES ('"+ String(dev_id.payload) + "','" + String(app_id.payload)+ "'," +  "NOW(), NOW()," + "'"+ String(newMsg.payload)+ "');";
 return msg;
+
+
+
+
+ttn-account-v2.US3aL_ET_bphR_K3QGhnTNuqGX9Cw36rLX-HAqru_G0
