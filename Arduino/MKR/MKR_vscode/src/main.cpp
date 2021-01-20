@@ -1,14 +1,14 @@
 #include <Arduino.h>
 #include <MKRWAN.h>
 LoRaModem modem;
-String appEui ="70B3D57ED00375DA ";
-String devAddr = "26001009";
-String nwkSKey = "E1CC611A0AC8CE899A1F0BD0322E7512";
-String appSKey = "25FAE76DC488D969477DAAA7A1A40097";
+String appEui ="70B3D57ED003189E ";
+String devAddr = "26011976";
+String nwkSKey = "A5E0FA71028EBAF6B95288B9EDF60B6F";
+String appSKey = "4CB484BC3CEA83622AFAFF7721BC2454";
 int connected;
 int port = 1;
 int err;
-int number = 0;
+String number;
 
 void setup() {
   // put your setup code here, to run once:
@@ -34,7 +34,7 @@ void loop() {
   else{
     Serial.println("Not connected");
   } 
-  number = number +1;
+  number = "01";
 
   //start sending message 
   modem.setPort(port);
