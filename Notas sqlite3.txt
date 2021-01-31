@@ -1,0 +1,51 @@
+
+-- example create table
+CREATE TABLE dhtreadings(id INTEGER PRIMARY KEY AUTOINCREMENT, temperature NUMERIC, humidity NUMERIC, currentdate DATE, currenttime TIME, device TEXT)
+
+--example insert into
+INSERT INTO dhtreadings(temperature, humidity, currentdate, currenttime, device) values(22.4, 48, date('now'), time('now'), "manual")
+
+
+-- create table aplied to ttn
+
+CREATE TABLE tabela1(id INTEGER PRIMARY KEY AUTOINCREMENT, app_id TEXT, dev_id TEXT, currentdate DATE, currenttime TIME, message TEXT)
+
+
+-- insert in javascript function
+var newMsg = { payload: msg.payload.payload};
+var dev_id = {payload: msg.dev_id};
+var app_id = {payload: msg.app_id};
+msg.topic= "INSERT INTO tabela1(app_id, dev_id, currentdate, currenttime, message) values("+ String(app_id) +","+ String(dev_id) + ",  date('now'), time('now')" + String(newMsg.payload + ")"
+
+
+INSERT INTO tabela1(app_id, dev_id, currentdate, currenttime, message) values(zelar_cb,mkr1310aa,  date('now'), time('now'), 01)
+
+
+
+"INSERT INTO `tabela1`(`hora`, `data`, `texto`) VALUES (NOW(), NOW(), '" + String(newMsg.payload)+ "');";
+
+var message = {payload: msg.payload.payload};
+var dev_id = {payload: msg.dev_id};
+var app_id = {payload: msg.app_id};
+msg.topic= "INSERT INTO tabela1(app_id, dev_id, currentdate, currenttime, message) values('" + String(app_id.payload) +"','"+ String(dev_id.payload) + "',  date('now'), time('now'), " + String(message.payload) + ")";
+return msg;
+
+
+
+______________________________________________________________________________________________________
+Rogerio dionisio flow function
+------------------------
+
+var newMsg = { payload: msg.payload.payload};
+var dev_id = {payload: msg.dev_id};
+var app_id = {payload: msg.app_id};
+//msg.topic= "INSERT INTO `tabela1` ( `dev_id` , `app_id` ,`hora`, `data`, `texto`) VALUES ('"+ String(dev_id.payload) + "','" + String(app_id.payload)+ "'," +  "NOW(), NOW()," + "'"+ String(newMsg.payload)+ "');";
+//msg.topic= "INSERT INTO tabela2(dev_id, app_id ,data, hora, text) VALUES (" + String(dev_id.payload) + "," + String(app_id.payload)+ ",NOW(), NOW()," + String(newMsg.payload)+ ")";
+var topic= "INSERT INTO tb2(dev_id, app_id, data, hora, text) values(" + String(dev_id.payload) + ", " + String(app_id.payload)+ ', date(\'now\'), time(\'now"\'), ' + newMsg.payload + ")";
+var msg1={};
+msg1.topic = topic;
+return msg1;
+
+
+CREATE TABLE tb2(id INTEGER PRIMARY KEY AUTOINCREMENT, dev_id TEXT, app_id TEXT, data DATE, hora TIME, text TEXT)
+
